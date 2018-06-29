@@ -1,0 +1,22 @@
+def calcMovAvg(inpArr,win): # Function Taking 2 parameters 1.An Array and 2.Moving Average Window
+    outArr=np.array([]) 
+    for i in range(0,(inpArr.size-win)+1): # Total Output Values should be Array Size - Window +1
+        movavg=np.mean(inpArr[i:i+win]) #Calculation Of Moving Average
+        outArr=np.append(outArr,movavg) # Appending Moving Average Values To Output Array
+    return outArr
+
+
+
+inpLst=[3, 5, 7, 2, 8, 10, 11, 65, 72, 81, 99, 100, 150] # Test Input Array
+
+calcMovAvg(np.array(inpLst),3) # Function Call with 3 as window
+
+/*
+
+OUTPUT
+
+*/
+
+array([  5.        ,   4.66666667,   5.66666667,   6.66666667,
+         9.66666667,  28.66666667,  49.33333333,  72.66666667,
+        84.        ,  93.33333333, 116.33333333])
